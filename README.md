@@ -4,3 +4,4 @@ I researched some resources for the python and javascript library. Bk and I do n
 We found the discord.py documentation. I shared this with BK and he followed the tutorial on this for the beginner hello bot. Link to tutorial: https://discordpy.readthedocs.io/en/latest/quickstart.html
 I followed a similar tutorial from youtube for my a personal discord server: https://www.youtube.com/watch?v=cCiqcu2NP8I&list=PL-7Dfw57ZZVRB4N7VWPjmT0Q-2FIMNBMP&ab_channel=JamesS
 
+Ethan 1: Using the resources Jasmin provided, I made a mock bot to get a feel for how it works. After goofily forgetting to put in the token for the bot, I got it to work with basic "Hello" responses.
