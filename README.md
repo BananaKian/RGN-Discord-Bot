@@ -8,4 +8,4 @@ Ethan 1: Using the resources Jasmin provided, I made a mock bot to get a feel fo
 
 Jasmine 2: I'm having a lot of trouble forking the github and getting my code onto the forked branched. I have googled commands and am trying to pull and then push, however I haven't worked with branches much. 
 
-Jasmine 3: I deleted the last fork I made and saved my work to a notepad file just in case. I then reforked and cloned the repo using the fork url. It seems to be working well. 
+Jasmine 3: I deleted the last fork I made and saved my work to a notepad file just in case. I then reforked and cloned the repo using the fork url. It seems to be working well. Added the new token and the synced. I tested the new user post welcome message and give an API response which was a random joke API in this case, however the API doesn't seem to be working. Realized I had to hit subscribe in the free API interface. 

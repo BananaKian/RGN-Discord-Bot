@@ -51,4 +51,4 @@ async def on_member_remove(member): #When user leaves, will run this function
     await channel.send("Goodbye! Sad to see you leaving!")
 
 #Goes at the end
-client.run("MTE2MjEwNjE1NTc5NjAyMTQ3OQ.GvfcL2.59Esx0VHvieJje-yBYqN0Dn2kItLWGag7-oThg") #tells bot to run. Goes through script and then starts running it. Need token. Do NOT share TOKEN ever
+client.run("MTE2MjEwNjE1NTc5NjAyMTQ3OQ.Ga7jN8.EgtDey9JZGKpLoHKLSmjM0e77FfSwFexigMU6g") #tells bot to run. Goes through script and then starts running it. Need token. Do NOT share TOKEN ever
