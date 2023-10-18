@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import requests
+import json
 
 #Initialize the bot. Utilizing commands just imported and discord package. Give prefects that the bot will listen out for on the discord sever. The bot detects prefect (e.g. !) and then looks for the command after. If user typed !hello, a programmed bot might type hi. ! says call and hello is the fucntion being called
 
@@ -42,8 +43,12 @@ async def on_member_join(member): #Calling an on member join event
     }
     response = requests.get(jokeurl, headers=headers)
     channel = client.get_channel(1161381888078925926)
-    await channel.send("Welcome to the server newcomer!")
-    await channel.send(response.json())
+    joke_data = json.loads(response.text)
+    joke = joke_data.get('joke', 'No joke available')
+    source = "Source: " + joke_data.get('source', 'Unknown')
+    await channel.send("Welcome to the server newcomer! Here is a dad joke: ")
+    await channel.send(joke) #send the joke
+    await channel.send(source) #send the source
 
 @client.event
 async def on_member_remove(member): #When user leaves, will run this function
