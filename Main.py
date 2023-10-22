@@ -4,6 +4,7 @@ import requests
 import json
 from discord import Embed
 
+
 #Initialize the bot. Utilizing commands just imported and discord package. Give prefects that the bot will listen out for on the discord sever. The bot detects prefect (e.g. !) and then looks for the command after. If user typed !hello, a programmed bot might type hi. ! says call and hello is the fucntion being called
 
 intents = discord.Intents.default()
@@ -64,11 +65,14 @@ async def embed(ctx):   #function named embed
     #author = ctx.author
     embed.set_author(name=ctx.author.display_name, url="https://www.etsualumni.org/s/974/bp18/interior.aspx?sid=974&gid=1&pgid=1222", icon_url=ctx.author.avatar.url)
     embed.set_thumbnail(url="https://upload.wikimedia.org/wikipedia/commons/0/0b/Appalachian_Mountains_wallpaper.jpg")
-    #name is just for title name, title of a field. 
-    embed.add_field(name="Fall 2023", value="Week 8", inline=TRUE)
+    #name is just for title name, title of a field. If inline is set to true
+    #embed.add_field(name="Fall 2023", value="Week 8", inline=True)
+    embed.add_field(name="Upcoming", value="Week 9", inline=True)
+    embed.set_footer(text="Have a great day!")
+    #All of the parts of the embed are optional. Format to liking
     #tell bot to send embed to chat
     await ctx.send(embed=embed)
     
 
 #Goes at the end
-client.run("") #tells bot to run. Goes through script and then starts running it. Need token. Do NOT share TOKEN ever
+client.run("MTE2MjEwNjE1NTc5NjAyMTQ3OQ.GlbdtB.6ltdaHPQmtM9GKnMjUoT-GoxJVpglcXrX1LDJ0") #tells bot to run. Goes through script and then starts running it. Need token. Do NOT share TOKEN ever
