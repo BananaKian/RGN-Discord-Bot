@@ -105,4 +105,4 @@ async def on_ready():
     
 
 #Goes at the end
-client.run("MTE2MjEwNjE1NTc5NjAyMTQ3OQ.GFTnWl.GOp5w06EXFh4d0b9L_L-HlbeZRfoT-AM2g3094") #tells bot to run. Goes through script and then starts running it. Need token. Do NOT share TOKEN ever
+client.run("") #tells bot to run. Goes through script and then starts running it. Need token. Do NOT share TOKEN ever
