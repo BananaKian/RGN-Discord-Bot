@@ -1,8 +1,9 @@
 import discord
 from discord.ext import commands
 import requests
-import json
+import json, datetime, asyncio
 from discord import Embed
+from discord.ext import tasks 
 
 
 #Initialize the bot. Utilizing commands just imported and discord package. Give prefects that the bot will listen out for on the discord sever. The bot detects prefect (e.g. !) and then looks for the command after. If user typed !hello, a programmed bot might type hi. ! says call and hello is the fucntion being called
@@ -18,10 +19,10 @@ intents.message_content = True
 client = commands.Bot(command_prefix = '!', intents=intents)
 
 #Add on event
-@client.event
-async def on_ready():  #on ready function - when  bot is ready to start receiving commmands, will execute function.
-    print("The bot is now ready for use.")   #want to know when bot is ready. User wont see
-    print("-------------------------------") #useful for debugging 
+#@client.event
+#async def on_ready():  #on ready function - when  bot is ready to start receiving commmands, will execute function.
+    #print("The bot is now ready for use.")   #want to know when bot is ready. User wont see
+    #print("-------------------------------") #useful for debugging 
 
 @client.command()
 async def hello(ctx): #name of function that user types in chat to run function. ctx says take input from discord
@@ -72,7 +73,36 @@ async def embed(ctx):   #function named embed
     #All of the parts of the embed are optional. Format to liking
     #tell bot to send embed to chat
     await ctx.send(embed=embed)
+
+    #Attempting schedule messages function 
+    #@tasks.loop(hours=1.0)
+    #async def send_message():
+        #channel = client.get_channel(1164288173879341118)
+        #channel.send("Message")
+        
+    #@client.event
+    #async def on_ready():
+       # send_message.start()
+
+    
+async def schedule_daily_message():
+    #wait for some time, send a message
+    now = datetime.datetime.now()
+    #then = now+datetime.timedelta(days=1)
+    #then.replace(hour=16, minute=0)
+    then = now.replace(hour=15, minute=43)
+    wait_time = (then-now).total_seconds()
+    await asyncio.sleep(wait_time)
+    channel = client.get_channel(1164288173879341118)
+
+    await channel.send("Good Morning!")
+
+@client.event
+async def on_ready():
+    print(f"Logged in as: {client.user.name}")
+    await schedule_daily_message()
+
     
 
 #Goes at the end
-client.run("MTE2MjEwNjE1NTc5NjAyMTQ3OQ.GlbdtB.6ltdaHPQmtM9GKnMjUoT-GoxJVpglcXrX1LDJ0") #tells bot to run. Goes through script and then starts running it. Need token. Do NOT share TOKEN ever
+client.run("MTE2MjEwNjE1NTc5NjAyMTQ3OQ.GFTnWl.GOp5w06EXFh4d0b9L_L-HlbeZRfoT-AM2g3094") #tells bot to run. Goes through script and then starts running it. Need token. Do NOT share TOKEN ever
